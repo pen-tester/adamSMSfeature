@@ -26,8 +26,8 @@ class Helper extends CI_Controller {
           $msg_body = $this->input->post("Body");             
           $this->smsmsg_model->insert_sms($receiveNum, $phoneNum, $msg_body);
           $msg=sprintf("From %s\n Msg\n %s", $phoneNum, $msg_body);        
-          send_Sms("+18137487471", $msg);
-          send_Sms("+18135464847‬", $msg);
+          //send_Sms("+18137487471", $msg);
+          //send_Sms("+18135464847‬", $msg);
           send_Sms("+18136000015‬", $msg);//(813) 546-4847‬From:Aaron Pimpis‭+1 (813) 600-0015‬
         }
 
@@ -47,9 +47,7 @@ class Helper extends CI_Controller {
 
           $this->smsmsg_model->add_sms($leads);
           $msg=sprintf("From %s\n Msg\n %s", $phoneNum, $msg_body);        
-          send_Sms("+18137487471", $msg,"+18137500671");
-          send_Sms("+18135464847‬", $msg,"+18137500671");
-          send_Sms("+18136000015‬", $msg,"+18137500671");//(813) 546-4847‬From:Aaron Pimpis‭+1 (813) 600-0015‬
+          send_Sms("+18136000015‬", $msg,"+18133285520");//(813) 546-4847‬From:Aaron Pimpis‭+1 (813) 600-0015‬
 
           unset($leads["userid"]);
           $leads["phone"] = $leads["FromNum"];
@@ -61,7 +59,7 @@ class Helper extends CI_Controller {
         public function voice(){
           $response = new Twilio\Twiml();
 
-          $callerid="+12402211454";
+          $callerid="+18133285520";
           // get the phone number from the page request parameters, if given
          // if (isset($_REQUEST['To']) && strlen($_REQUEST['To']) > 0) {
            if (strlen($this->input->get_post("To"))>0) {
@@ -92,7 +90,7 @@ class Helper extends CI_Controller {
           $this->load->model("callback_model");
           $row = $this->callback_model->get_phone(0);
           if($row == null){
-            $dial->number("+‭18135464847");
+            $dial->number("+18136000015‬");
           }
           else $dial->number($row["phone"]);
           header('Content-Type: text/xml');
@@ -106,7 +104,7 @@ class Helper extends CI_Controller {
           $this->load->model("users_model");
           $user = $this->users_model->get_userbyid($userid);
           if($user == null){
-            $dial->number("+‭18135464847");
+            $dial->number("+18136000015‬");
           }
           else $dial->number($user->backwardnumber);
           header('Content-Type: text/xml');
