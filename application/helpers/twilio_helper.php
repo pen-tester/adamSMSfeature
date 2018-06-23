@@ -5,8 +5,8 @@
 
 	function get_TwilioConfig(){
 		$stripe = array(
-		  "id"      => "AC98b85f05e66d3a0b6f0f34f4a1d43681",
-		  "token" => "b6f2694996c98f17baf6444f6c5929ee"
+		  "id"      => "xxx",
+		  "token" => "xxx"
 		);
 		return $stripe;
 	}
