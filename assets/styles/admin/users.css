@@ -1,0 +1,12 @@
+.btn_sendall{
+	color:#2a9ffd;
+	cursor: pointer;
+}
+
+.btn_sendall.disable{
+	color:#888;
+}
+
+td .btn-select{
+	width:100px;
+}

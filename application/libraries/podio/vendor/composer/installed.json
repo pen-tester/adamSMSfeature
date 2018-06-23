@@ -1,0 +1,49 @@
+[
+    {
+        "name": "podio/podio-php",
+        "version": "4.3.0",
+        "version_normalized": "4.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/podio/podio-php.git",
+            "reference": "436002738f202455c2c788ed7204fd24a4c3b5c0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/podio/podio-php/zipball/436002738f202455c2c788ed7204fd24a4c3b5c0",
+            "reference": "436002738f202455c2c788ed7204fd24a4c3b5c0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "kdyby/curl-ca-bundle": "Improve security through providing current CA ROOT certificates bundle"
+        },
+        "time": "2015-09-30 08:28:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib/",
+                "models/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andreas Haugstrup Pedersen",
+                "email": "haugstrup@podio.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP Client for Podio API",
+        "homepage": "http://github.com/podio/podio-php",
+        "keywords": [
+            "podio"
+        ]
+    }
+]

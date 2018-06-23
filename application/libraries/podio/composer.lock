@@ -1,0 +1,64 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "8561195b59649c6b875b7f442b747101",
+    "content-hash": "acf878e9434ad96b0a9326377ef24aa3",
+    "packages": [
+        {
+            "name": "podio/podio-php",
+            "version": "4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/podio/podio-php.git",
+                "reference": "436002738f202455c2c788ed7204fd24a4c3b5c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/podio/podio-php/zipball/436002738f202455c2c788ed7204fd24a4c3b5c0",
+                "reference": "436002738f202455c2c788ed7204fd24a4c3b5c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "kdyby/curl-ca-bundle": "Improve security through providing current CA ROOT certificates bundle"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/",
+                    "models/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Haugstrup Pedersen",
+                    "email": "haugstrup@podio.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Client for Podio API",
+            "homepage": "http://github.com/podio/podio-php",
+            "keywords": [
+                "podio"
+            ],
+            "time": "2015-09-30 08:28:53"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

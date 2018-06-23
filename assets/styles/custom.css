@@ -1,0 +1,333 @@
+/* Footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 280px;
+  background: 
+  /* color overlay */ 
+    linear-gradient(
+      rgba(240, 212, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    /* image to overlay */
+    url(http://images.cdn.fotopedia.com/_avPIZmqM3w-7z161LH_268-hd.jpg);
+}
+
+
+/* Custom footer CSS
+-------------------------------------------------- */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+.footertext {
+  color: #ffffff;
+}
+
+
+
+body{
+   /* background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');*/
+}
+
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+body,html{
+    height: 100%;
+  }
+
+  nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+  }
+
+  .main{
+    padding: 10px 10px 0 10px;
+  }
+
+ @media (min-width: 765px) {
+
+    .main{
+      position: absolute;
+      width: calc(100% - 40px); 
+      margin-left: 40px;
+      float: right;
+    }
+
+    nav.sidebar:hover + .main{
+      margin-left: 200px;
+    }
+
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: 0px;
+    }
+
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+      text-align: center;
+      width: 100%;
+      margin-left: 0px;
+    }
+    
+    nav.sidebar a{
+      padding-right: 13px;
+    }
+
+    nav.sidebar .navbar-nav > li:first-child{
+      border-top: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav > li{
+      border-bottom: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+      padding: 0 0px 0 0px;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: #777;
+    }
+
+    nav.sidebar{
+      width: 200px;
+      height: 100%;
+      margin-left: -160px;
+      float: left;
+      margin-bottom: 0px;
+    }
+
+    nav.sidebar li {
+      width: 100%;
+    }
+
+    nav.sidebar:hover{
+      margin-left: 0px;
+    }
+
+    .forAnimate{
+      opacity: 0;
+    }
+  }
+   
+  @media (min-width: 1330px) {
+
+    .main{
+      width: calc(100% - 200px);
+      margin-left: 200px;
+    }
+
+    nav.sidebar{
+      margin-left: 0px;
+      float: left;
+    }
+
+    nav.sidebar .forAnimate{
+      opacity: 1;
+    }
+  }
+
+  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+  }
+
+  nav:hover .forAnimate{
+    opacity: 1;
+  }
+  section{
+    padding-left: 15px;
+  }
+  
+ a:hover{cursor: pointer; cursor: hand;}
+
+ .chatarea{
+   background: #e5e5e5;
+ }
+ .sms_content{
+   width: 100%;
+   resize: none;
+   height: 75px;
+ }
+
+ /**** MODAL ****/
+
+.modal-header {
+    background: #243e53;
+    border-radius: 6px 6px 0 0;
+}
+
+h3.modal-title {
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    margin: 12px 0;
+}
+
+.modal-body h2 {
+    color: #333;
+}
+
+.pay_title h2 {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+p.fee,
+p.deduct {
+    color: #000;
+    font-size: 14px;
+}
+
+p.total {
+    color: #333;
+}
+
+.modal-footer button:hover {
+    color: #fff;
+}
+
+
+.chatbox {
+    position:relative;
+    border-radius: 10px;
+    min-height: 50px;
+    width:80% !important;
+    margin:10px 5px;
+    padding: 10px;
+}
+
+.placeright{
+  float: right;
+  width:100%;
+}
+.placeright:after{
+  content:'';
+  clear:both;
+}
+.placeleft{
+  float: left;
+}
+.placeleft:after{
+  content:'';
+  clear:both;
+}
+.clearfix{
+  clear:both;
+}
+
+.chatbox.placeright{
+  background: #3c763d;
+}
+.chatbox.placeleft{
+  background: #e15915;
+}
+.chatbox.placeright:after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-top: solid 20px transparent;
+    border-left: solid 20px #3c763d;
+    border-bottom: solid 20px transparent;
+}
+.chatbox.placeleft:after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-top: solid 20px transparent;
+    border-right: solid 20px #e15915;
+    border-bottom: solid 20px transparent;
+}
+
+.rectime{
+  width:100%;
+  display: inline-block;
+}

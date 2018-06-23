@@ -1,0 +1,19 @@
+/* for phone number list */
+.number_list{
+    list-style: none;    
+    height: 200px;
+    overflow: auto;
+    border:1px solid #000;
+    margin: 0;
+    padding: 1px;
+}
+
+.number_list li{
+    border:1px solid #333;
+    background: #aaa;
+    cursor: pointer;
+}
+
+.number_list li:hover{
+    background: #999;
+}

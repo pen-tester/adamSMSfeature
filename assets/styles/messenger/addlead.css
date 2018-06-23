@@ -1,0 +1,43 @@
+#discovery_form{
+    border:1px solid #444;
+    padding:10px 30px;
+    border-radius: 15px;
+}
+
+.stararea .star {
+    cursor: pointer;
+    color: #aaa;
+    font-size: x-large;
+}
+
+.stararea .star.goldstar {
+    color: #FFDF00;
+}
+
+.buttongroup{
+    padding:10px;
+}
+
+.profileitem{
+    margin-top:10px;
+}
+
+.tablewraper{
+    display: table;
+}
+
+.tablewraper label{
+    display: table-cell;
+    white-space: nowrap;
+}
+
+.tablewraper input{
+    display: table-cell;
+    width: 100%;
+}
+
+.fullwidth{width: 100%;}
+
+.tablewraper .btn-select{
+    width:150px;
+}

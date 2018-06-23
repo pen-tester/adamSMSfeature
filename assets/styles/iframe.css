@@ -1,0 +1,15 @@
+
+.hidden{
+	display: none;
+}
+
+#iframe iframe{
+	width:90%;
+	height: 90%;
+	margin: auto;
+	position: relative;
+	left: 0;
+    right: 0;
+    top:5%;
+    display: block;
+}

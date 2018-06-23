@@ -1,0 +1,61 @@
+.datetimewrapper .glyphicon{
+    position: absolute;
+    right:10px; top:10px;
+}
+.datetimewrapper {
+    position: relative;
+    width:200px;
+}
+
+.datetimewrapper input{
+    width:100%;
+    padding:4px;
+}
+.searchbar{
+    display: table;
+    padding: 20px;
+    margin: auto;
+}
+.searchbar div{
+    display: table-cell;
+    padding:4px 2px;
+}
+
+.filter_group_without_label{
+    padding: 30px 0;
+}
+
+.searchbarcontainer{
+    width:100%;
+    padding:0 30px;
+}
+
+.searchbar .btn-select{
+    width:120px;
+}
+.searchbar label{
+    display: block;
+}
+
+.btn-search.abs_loaction{
+    position: absolute;
+    right: 0;
+    top:5px;
+}
+
+.formgroup{
+    position: relative;
+}
+
+.resultwrapper label{
+    display: block;
+    margin-left:20px;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.responisve_wrapper{
+    width:100%;
+    max-width: 100%;
+    overflow-x: auto;
+}

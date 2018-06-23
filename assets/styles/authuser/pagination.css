@@ -1,0 +1,9 @@
+.pagination .singlepage{
+    color:#444;
+    padding:3px 5px;
+}
+
+.pagination .singlepage.active{
+    color:#000;
+    font-weight: bold;
+}
