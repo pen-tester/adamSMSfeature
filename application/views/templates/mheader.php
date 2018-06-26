@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Prank your friends with GoatAttack! Barrage their phone with goat pictures and puns." />
     <meta name="keywords" content="goat, goat attack, prank, goat prank, text prank, goat text" />
+    <link rel="icon" href="/assets/images/favico.ico">
     <title><?php echo ($title); ?></title>
     <?php if(isset($favico)){
       ?>
-        <link rel="icon" href="/assets/images/favico.ico">
+       
     <?php
     }
     ?>

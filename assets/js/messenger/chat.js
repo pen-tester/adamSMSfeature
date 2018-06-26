@@ -89,7 +89,7 @@ $(document).ready(function(){
 	$('#sms').keydown(function (e) {
 
 	 // if (e.ctrlKey && e.keyCode == 13) {
-	  if (e.keyCode == 13) {
+	  if (e.keyCode == 13 && e.ctrlKey) {
 	    // Ctrl-Enter pressed
 	    send_sms();
 	  }
@@ -539,7 +539,7 @@ function initchat(data){
 			htmlitem=`<div class='row'> 
 					   <div class='chatbox  placeleft'>
 					   <input type="hidden" value="`+item.No+`">`+
-					     item.Content+
+					     item.Content.replace(/(\r\n|\r|\n)/g, "<br>")+
 					   "</div>\
 					   <div><span class='rectime text-left'>"
 					   +time+
@@ -549,14 +549,14 @@ function initchat(data){
 			htmlitem=`<div class='row'> 
 					   <div class='chatbox  placeright'>
 					   	<input type="hidden" value="`+item.No+`">`+
-					     item.Content+
+					     item.Content.replace(/(\r\n|\r|\n)/g, "<br>")+
 					   `</div>
 					   <div><span class='rectime text-right'>`
 					   +time+
 					   `</span></div>
 					</div>`;
 		}
-
+		console.log(htmlitem);
 		$("#msgcontent").append(htmlitem);
 	}
 	if(length>0){

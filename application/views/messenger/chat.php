@@ -1,4 +1,4 @@
-<link href="/assets/styles/chat.css?9" rel="stylesheet"/>
+<link href="/assets/styles/chat.css?10" rel="stylesheet"/>
 <ul class="contextmenu">
  	<li><i class="fa fa-trash" aria-hidden="true"></i>Remove Message</li>
 </ul>
@@ -10,7 +10,10 @@
                 <input type="hidden" value="<?php echo $username; ?>" id="fromuser"/>
                 <div class="row chatarea">		
                     Chat with <label id="current_phone"><?php echo $username; ?></label>
-                </div>
+                </div>            
+                <div class="row" id="msgcontent">				
+                </div>            
+
                 <input type="hidden" id="topid" value="-1"/>
                 <div class="row">
                     <div class="col-sm-8 col-md-8">
@@ -21,8 +24,6 @@
                         <i class="fa fa-paper-plane" aria-hidden="true"></i>
                         </button>
                     </div>		
-                </div>
-                <div class="row" id="msgcontent">				
                 </div>
             </div>            
         </div>
@@ -82,10 +83,21 @@
                     <div class="profileitem">
                         <div class="row">
                             <div class="col-sm-4 col-md-4">
-                                <label>Contact:</label>
+                                <label>Mailing Address:</label>
                             </div>
                             <div class="col-sm-8 col-md-8">
-                                <input class="property_val fullwidth"  id='pcontact'  data-target="contact"/>
+                                <input class="property_val fullwidth"  id='pmailingaddr'  data-target="mailingaddr" />
+                            </div>              
+                        </div>           
+                    </div>                    
+                    <div class="profileitem">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4">
+                                <label>Metro:</label>
+                            </div>
+                            <div class="col-sm-8 col-md-8">
+                                <span class="property_val fullwidth showtxt" id='pmetro'  data-target="metro"></span>
+                                <!--input class="property_val fullwidth"  id='pcontact'  data-target="contact"/ -->
                             </div>              
                         </div>           
                     </div>
@@ -106,8 +118,10 @@
                             </div>
                             <div class="col-sm-8 col-md-8">
                                 <div>
-                                    <input type="hidden" name= "leads[property-address-map]" class="property_val showaddr">  
-                                    <span data-target="address,city,state,zip"  class="showmap property_val showaddr zillow" data-option="0" data-url="" data-id=""></span><span><img data-option="1" src="/assets/images/google.jpg" class="showmap" style="width:30px;height: 30px;" /></span>
+                                    <input type="hidden" name= "leads[property-address-map]" class="property_val showaddr"> 
+                                    <span data-target="address,city,state,zip"  class="showmap property_val showaddr zillow" data-option="0" data-url="" data-id=""></span>
+                                    <br/>
+                                    <span><img data-option="1" src="/assets/images/google.jpg" class="showmap" style="width:30px;height: 30px;" /></span>
                                     <img data-option="1" src="/assets/images/zillow.jpeg" class="update_from_zillow" style="width:30px;height: 30px;" />
                                 </div>  
                             </div>
@@ -322,7 +336,7 @@
                                 <textarea  name="leads[notes-2]"  class="property_val fullwidth" data-target="note"></textarea> 
                             </div>
                         </div>   
-                        <div class="row">
+                        <!--div class="row">
                             <div class="col-md-4 col-lg-4 text-center">
                                 <button class="uploadRealtor btn btn-primary" type="button">Realtor</button>
                             </div>
@@ -332,7 +346,7 @@
                             <div class="col-md-4 col-lg-4 text-center">
                                 <button class="uploadCashbuyer btn btn-primary" type="button">Cash Buyer</button>
                             </div>                            
-                        </div>                                           
+                        </div-->                                           
                     </div>
                     <div class="modal_area" id="errorbox">
                         <div class="modal-dialog modal-lg" role="document">
@@ -371,8 +385,8 @@
     </div>
 </div>
 <!--<script defer src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script> -->
-<script defer type="text/javascript" src="/assets/js/messenger/util.js?5"></script> 
-<script defer type="text/javascript" src="/assets/js/messenger/context.js?2"></script> 
-<script defer type="text/javascript" src="/assets/js/messenger/showprofile.js?16"></script> 
-<script defer type="text/javascript" src="/assets/js/messenger/chat.js?27"></script> 
+<script defer type="text/javascript" src="/assets/js/messenger/util.js?6"></script> 
+<script defer type="text/javascript" src="/assets/js/messenger/context.js?3"></script> 
+<script defer type="text/javascript" src="/assets/js/messenger/showprofile.js?17"></script> 
+<script defer type="text/javascript" src="/assets/js/messenger/chat.js?28"></script> 
 

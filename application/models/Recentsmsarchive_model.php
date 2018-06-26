@@ -1,7 +1,8 @@
 <?php
 class Recentsmsarchive_model extends CI_Model {
     public $keys= array(
-        "PhoneNum", "FromNum", "RecTime", "Content", "status", "readstatus", "ChatTime", "date_added", "date_sent", "firstname", "lastname", "phone", "contact", "email", "leadtype", "grade", "address", "city", "state", "zip", "owner_address", "owner_city", "owner_state", "called", "propertytype", "tax_assessment", "lastsolddate", "lastsoldprice", "bed", "bath", "zillow_estimate", "year_built", "owe", "offer", "sqft", "lot_size", "central_ac", "ac_note", "asking-price", "roof", "garage", "pool", "repairs", "occupancy", "rent", "zillow_link", "note", "rate", "podioitemid", "podiosellerid", "podiocashbuyerid", "realtor", "userid", "send_userid", "sms_sent_time", "send_username"
+        "PhoneNum", "FromNum", "RecTime", "Content", "status", "readstatus", "ChatTime", "date_added", "date_sent", "firstname", "lastname", "phone", "contact", "email", "leadtype", "grade", "address", "city", "state", "zip", "owner_address", "owner_city", "owner_state", "called", "propertytype", "tax_assessment", "lastsolddate", "lastsoldprice", "bed", "bath", "zillow_estimate", "year_built", "owe", "offer", "sqft", "lot_size", "central_ac", "ac_note", "asking-price", "roof", "garage", "pool", "repairs", "occupancy", "rent", "zillow_link", "note", "rate", "podioitemid", "podiosellerid", "podiocashbuyerid", "realtor", "userid", "send_userid", "sms_sent_time", "send_username",
+        "owner_zip", "metro", "mailingaddr"
     );
 
     public function __construct()
@@ -49,7 +50,7 @@ class Recentsmsarchive_model extends CI_Model {
         $leadtype_cretaria="1";
         $cretaria ="";
         if($search!=""){
-             $search_cretaria ="(ta.leadtype like '%%s%' or ta.phone like '%%s%' or ta.Content like '%%s%' or concat(ta.firstname,' ', ta.lastname) like '%%s%' or concat(ta.address,',', ta.city,', ', ta.state, ', ', ta.zip) like '%%s%' or ta.grade like '%%s%')";
+             $search_cretaria ="(ta.mailingaddr like '%%s%' or ta.metro like '%%s%' or ta.leadtype like '%%s%' or ta.phone like '%%s%' or ta.Content like '%%s%' or concat(ta.firstname,' ', ta.lastname) like '%%s%' or concat(ta.address,',', ta.city,', ', ta.state, ', ', ta.zip) like '%%s%' or ta.grade like '%%s%')";
              $search_cretaria =str_replace("%s", $search, $search_cretaria);
         }
         if(count($grades)>0){

@@ -3,8 +3,8 @@
 <script type="text/javascript" src="/assets/js/libs/angular/angular.min.js"></script>
 <script type="text/javascript" src="/assets/js/libs/angular/angular-route.min.js"></script>
 <script type="text/javascript" src="/assets/js/libs/angular/angapp.js"></script>
-<script type="text/javascript" src="/assets/js/authuser/sendallController.js?7"></script>
-<script defer="defer" type="text/javascript" src="/assets/js/authuser/sendall.js?7"></script> 
+<script type="text/javascript" src="/assets/js/authuser/sendallController.js?9"></script>
+<script defer="defer" type="text/javascript" src="/assets/js/authuser/sendall.js?10"></script> 
 <div ng-app="mainApp" ng-controller="sendallController" id="sendallController">
     <div class="container" >
 
@@ -67,7 +67,7 @@
                     <tr ng-repeat="item in allsms_templates" >
                         <td>{{item.id}}</td>
                         <td ng-bind-html="renderHtml(item.msg)"></td>
-                        <td><span class='btn_sendall btnpadding' ng-click="send_batch_sms(item.id)"><i class="fa fa-paper-plane" aria-hidden="true"></i></span></td>
+                        <td><span class='btn_sendall btnpadding' ng-click="checkDuplicate(item.id)"><i class="fa fa-paper-plane" aria-hidden="true"></i></span></td>
                         <?php 
                             if($this->userrole != 1000){
                         ?>                        
@@ -80,6 +80,20 @@
             </table>
         </div>
     </div>
+    <div class="modal_area" id="questionbox">
+        <div class="modal_dialog">
+            <div class="modal_title">
+                <label>Question</label>
+                <span class="close btnclose" data-target="questionbox">&times;
+                </span>
+            </div>
+            <div class="modal_content">
+            </div>
+            <div class="modal_footer">
+             <input type="button" class="btn btn-success btnclose"  data-target="questionbox" value="Yes"  ng-click="send_batch_sms(send_option)"> <input type="button" class="btn btn-primary btnclose"  data-target="questionbox" value="No">
+            </div>                
+        </div>
+    </div>    
     <div class="modal_area" id="msgbox">
         <div class="modal_dialog">
             <div class="modal_title">
@@ -142,22 +156,20 @@
                     <th>address</th>
                     <th>city</th>
                     <th>state</th>
+                    <th>zip</th>
                     <th>firstname</th>
                     <th>lastname</th>
                     <th>owner_address</th>
                     <th>owner_city</th>
                     <th>owner_state</th>
+                    <th>owner_zip</th>
                     <th>phone0</th>
                     <th>phone1</th>
                     <th>phone2</th>
                     <th>phone3</th>
                     <th>phone4</th>
-                    <th>phone5</th>
-                    <th>phone6</th>
-                    <th>phone7</th>
-                    <th>phone8</th>
-                    <th>phone9</th>
                     <th>leadtype</th>
+                    <th>metro</th>
                 </thead>
                 <tbody>
                     <tr ng-repeat="phone in phone_items_page">
@@ -167,22 +179,20 @@
                         <td>{{phone.address}}</td>
                         <td>{{phone.city}}</td>
                         <td>{{phone.state}}</td>
+                        <td>{{phone.zip}}</td>
                         <td>{{phone.firstname}}</td>
                         <td>{{phone.lastname}}</td>
                         <td>{{phone.owner_address}}</td>
                         <td>{{phone.owner_city}}</td>
                         <td>{{phone.owner_state}}</td>
+                        <td>{{phone.owner_zip}}</td>
                         <td>{{phone.phone0}}</td>
                         <td>{{phone.phone1}}</td>
                         <td>{{phone.phone2}}</td>
                         <td>{{phone.phone3}}</td>
                         <td>{{phone.phone4}}</td>
-                        <td>{{phone.phone5}}</td>
-                        <td>{{phone.phone6}}</td>
-                        <td>{{phone.phone7}}</td>
-                        <td>{{phone.phone8}}</td>
-                        <td>{{phone.phone9}}</td>
                         <td>{{phone.leadtype}}</td>
+                        <td>{{phone.metro}}</td>
                     </tr>
                 </tbody>
             </table>

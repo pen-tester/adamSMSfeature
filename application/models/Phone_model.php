@@ -1,7 +1,8 @@
 <?php
 class Phone_model extends CI_Model {
 
-        public $keys=array("sent", "date_added",  "date_sent", "address", "city", "state", "firstname", "lastname", "owner_address", "owner_city", "owner_state", "phone0", "phone1", "phone2", "phone3", "phone4", "phone5", "phone6", "phone7", "phone8", "phone9", "leadtype", "userid");
+        public $keys=array("sent", "date_added",  "date_sent", "address", "city", "state", "firstname", "lastname", "owner_address", "owner_city", "owner_state", "phone0", "phone1", "phone2", "phone3", "phone4", "phone5", "phone6", "phone7", "phone8", "phone9", "leadtype", "userid",
+                "zip", "owner_zip", "metro");
 
         public function __construct()
         {

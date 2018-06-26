@@ -20,7 +20,7 @@ mainApp.controller('sendallController', function($scope, $http, $sce) {
     } 
     
     $scope.entrypoints = [{name:"All",value:0},{name:"10",value:10},{name:"15",value:15},{name:"25",value:25},{name:"50",value:50},{name:"100",value:100},{name:"150",value:150}];
-    $scope.selected_entrypoint = $scope.entrypoints[4];
+    $scope.selected_entrypoint = $scope.entrypoints[0];
 
     $scope.filterfunction = function(request){
         return true;
@@ -142,6 +142,8 @@ mainApp.controller('sendallController', function($scope, $http, $sce) {
         });  
     }
 
+    $scope.send_option = -1;
+
     $scope.send_batch_sms = function(option){
        
         $http.get( "/api/sendsms/"+option+"/"+$scope.selected_entrypoint.value+"/"+$scope.select_user.No+"/adam")
@@ -165,6 +167,30 @@ mainApp.controller('sendallController', function($scope, $http, $sce) {
             $scope.content = "Something went wrong";
         });         
     }
+
+    $scope.checkDuplicate = function(option){
+       
+        $http.get( "/api/checkDuplicate/"+option+"/"+$scope.select_user.No)
+        .then(function(response) {
+            //First function handles success
+            console.log(response.data);
+
+            $scope.send_option = option;
+            //Display the modal dialog
+            if(response.data.code=='1'){
+                $scope.send_batch_sms(option);
+            }
+            else{
+                //$("#questionbox .modal_content").text(response.data.errors);
+                $("#questionbox .modal_content").text("This batch has recently been sent.  Are you sure?");
+                $("#questionbox").fadeIn();                
+            }
+        }, function(response) {
+            //Second function handles error
+            $scope.content = "Something went wrong";
+        });         
+    }
+
 
     $scope.send_batch_sms_master = function(option){
         $http.get( "/api/sendsms/"+option+"/"+$scope.selected_entrypoint.value+"/-1"+"/adam")

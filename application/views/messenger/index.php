@@ -186,10 +186,21 @@
         <div class="profileitem">
             <div class="row">
                 <div class="col-sm-4 col-md-4">
-                    <label>Contact:</label>
+                    <label>Mailing Address:</label>
                 </div>
                 <div class="col-sm-8 col-md-8">
-                    <input class="property_val fullwidth"  id='pcontact'  data-target="contact"/>
+                    <input class="property_val fullwidth"  id='pmailingaddr'  data-target="mailingaddr" />
+                </div>              
+            </div>           
+        </div>                    
+        <div class="profileitem">
+            <div class="row">
+                <div class="col-sm-4 col-md-4">
+                    <label>Metro:</label>
+                </div>
+                <div class="col-sm-8 col-md-8">
+                    <span class="property_val fullwidth showtxt" id='pmetro'  data-target="metro"></span>
+                    <!--input class="property_val fullwidth"  id='pcontact'  data-target="contact"/ -->
                 </div>              
             </div>           
         </div>
@@ -426,7 +437,7 @@
                     <textarea  name="leads[notes-2]"  class="property_val fullwidth" data-target="note"></textarea> 
                 </div>
             </div>   
-            <div class="row">
+            <!--div class="row">
                 <div class="col-md-4 col-lg-4 text-center">
                     <button class="uploadRealtor btn btn-primary" type="button">Realtor</button>
                 </div>
@@ -436,7 +447,7 @@
                 <div class="col-md-4 col-lg-4 text-center">
                     <button class="uploadCashbuyer btn btn-primary" type="button">Cash Buyer</button>
                 </div>                            
-            </div>                                           
+            </div-->                                           
         </div>
         <div class="modal_area" id="errorbox">
             <div class="modal-dialog modal-lg" role="document">
@@ -455,8 +466,8 @@
         </div>
     </div>
 </form>
-<script defer type="text/javascript" src="/assets/js/messenger/showprofile.js?7"></script>     
+<script defer type="text/javascript" src="/assets/js/messenger/showprofile.js?8"></script>     
 <script defer type="text/javascript" src="/assets/js/messenger/util.js?7"></script>     
 <script defer="defer" type="text/javascript" src="/assets/js/messenger/pagination.js?3"></script>
-<script defer="defer" type="text/javascript" src="/assets/js/messenger/main.js?26"></script>
+<script defer="defer" type="text/javascript" src="/assets/js/messenger/main.js?27"></script>
 

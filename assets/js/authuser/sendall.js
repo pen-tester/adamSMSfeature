@@ -47,7 +47,9 @@ $(document).ready(function(){
             contentType: false            
         }).done(function(response, status){
             if(response.status=='ok'){
+                $("#frm_upcsv input[type=file]").val('');
                 reload_phones();
+                
             }
         }).fail(function(resp, status){
 

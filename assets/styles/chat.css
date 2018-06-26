@@ -292,3 +292,10 @@ td{
 #searchbar .mediumwidth{
   width:100%;
 }
+
+#msgcontent{
+    height: 640px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 30px;
+}

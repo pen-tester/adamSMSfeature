@@ -41,6 +41,27 @@ class Api extends CI_Controller {
             header("Content-Type: application/json; charset=UTF-8");
         }
 
+        public function checkDuplicate($option='0', $userid=0){
+          $result = new MessageResult();
+          $userid =(int)$userid;
+          $masteraction = ($userid== -1)?1:0;
+          $userid = ($this->userrole ==1000)?$userid:$this->userid;            
+          $this->load->model("log_model");
+          $count = $this->log_model->get_recent_count($option,$userid);
+          if($count >0 ) {
+            $result->code=400;
+            $result->status="error";
+            $result->errors="You could send only one time in 15 mins";
+            echo json_encode($result);
+            return;
+          }else{
+            $result->code=1;
+            $result->status="ok";
+            $result->errors="possible";
+            echo json_encode($result);            
+          }          
+        }
+        
 
         public function sendsms($option='0',$entry=0, $userid=0,  $pwd=''){
           $result = new MessageResult();
@@ -55,14 +76,6 @@ class Api extends CI_Controller {
             return;            
           }
           $this->load->model("log_model");
-          $count = $this->log_model->get_recent_count($option,$userid);
-          if($count >0 ) {
-            $result->code=1;
-            $result->status="error";
-            $result->errors="You could send only one time in 15 mins";
-            echo json_encode($result);
-            return;
-          }
           
           $this->log_model->insert_log($option,$userid);
 
