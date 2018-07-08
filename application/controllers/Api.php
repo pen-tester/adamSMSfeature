@@ -271,7 +271,8 @@ class Api extends CI_Controller {
           if($phone==""){
             $phone=$this->input->post("phone");
           }
-          $result->result=$this->smsmsg_model->list_chat($phone);
+          $userid = ($this->userrole ==1000)?0:$this->userid;
+          $result->result=$this->smsmsg_model->list_chat($phone,$userid);
           echo (json_encode($result)); 
 
         }
