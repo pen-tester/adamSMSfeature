@@ -38,7 +38,7 @@ class Smsmsg_model extends CI_Model {
 	}
 
     public function list_chat($phone, $userid='0'){
-        $querytxt= sprintf("select * from tb_recsms where (PhoneNum='%s' or FromNum='%s') and (userid=%d or 0=%d)  order by No desc", $phone, $phone,$userid,$userid);
+        $querytxt= sprintf("select * from tb_recsms where (PhoneNum='%s' or FromNum='%s') order by No desc", $phone, $phone,$userid,$userid);
         $query=$this->db->query($querytxt);
         return $query->result_array();
 

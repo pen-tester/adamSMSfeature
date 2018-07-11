@@ -531,7 +531,7 @@ function initchat(data){
 	var phone = $("#phonenumber").val(); 
 	$("#msgcontent").html("");
 
-	for(var i=0;i<length; i++){
+	for(var i=length-1;i>=0; i--){
 		var item = data[i];
 		var htmlitem;
 		var time = formatDate(item.RecTime, "MM/dd/yy hh:mm a");
@@ -562,6 +562,8 @@ function initchat(data){
 	if(length>0){
 		$("#topid").val(data[0].No);
 	}
+
+	$("#msgcontent").animate({ scrollTop: $('#msgcontent').prop("scrollHeight")}, 1000);
 }
 
 function addchatitem(item,direction=0){

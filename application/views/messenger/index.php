@@ -189,7 +189,7 @@
                     <label>Mailing Address:</label>
                 </div>
                 <div class="col-sm-8 col-md-8">
-                    <input class="property_val fullwidth"  id='pmailingaddr'  data-target="mailingaddr" />
+                    <span class="property_val fullwidth showmailaddr"  id='pmailingaddr'  data-target="mailingaddr"> </span>
                 </div>              
             </div>           
         </div>                    
@@ -466,7 +466,7 @@
         </div>
     </div>
 </form>
-<script defer type="text/javascript" src="/assets/js/messenger/showprofile.js?8"></script>     
+<script defer type="text/javascript" src="/assets/js/messenger/showprofile.js?18"></script>     
 <script defer type="text/javascript" src="/assets/js/messenger/util.js?7"></script>     
 <script defer="defer" type="text/javascript" src="/assets/js/messenger/pagination.js?3"></script>
 <script defer="defer" type="text/javascript" src="/assets/js/messenger/main.js?27"></script>

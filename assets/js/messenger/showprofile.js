@@ -52,6 +52,9 @@ function show_profile(profile){
 				else $(this).prop("checked", true);				
 			}else if($(this).hasClass("selectbox")){
 				$(this).find(".btn-select-input").val(profile[target]);
+			}else if($(this).hasClass("showmailaddr")){
+				if($(this).attr("type")=="hidden")$(this).val(profile.owner_address+", "+profile.owner_city+", "+profile.owner_state+", "+profile.owner_zip);
+				else $(this).text(profile.owner_address+", "+profile.owner_city+", "+profile.owner_state+", "+profile.owner_zip);
 			}else{
 				
 				if($(this).hasClass("showtxt")){
