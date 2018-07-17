@@ -49,11 +49,18 @@ class Helper extends CI_Controller {
           $msg=sprintf("From %s\n Msg\n %s", $phoneNum, $msg_body);        
           send_Sms("+18136000015‬", $msg,"+18133285520");//(813) 546-4847‬From:Aaron Pimpis‭+1 (813) 600-0015‬
 
+          $user =(array) $this->users_model->get_userbyid($userid);
+          if($user["link_incoming"] == "1"){
+           send_Sms($receiveNum, $msg, $user["backwardnumber"]);
+           //echo "linked";
+          }
+
+
           unset($leads["userid"]);
           $leads["phone"] = $leads["FromNum"];
           //$user = $this->users_model->get_userbyid($userid);
           $this->recentsmsarchive_model->update_data($leads);
-
+          echo json_encode($leads);
         }
 
         public function voice(){

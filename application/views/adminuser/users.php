@@ -21,6 +21,7 @@
                 <th>Email</th>	
                 <th>Outgoing #</th>	
                 <th>Incoming #</th>	
+                <th>Phone Link</th>	
                 <th>Upload</th>	
                 <th>SendSms</th>	                                                                            	        
 		        <th>SMS Edit</th>
@@ -35,6 +36,7 @@
                     <td>{{request.UsrId}}</td>	
                     <td>{{request.twiliophone}}</td>	
                     <td>{{request.backwardnumber}}</td>	
+                    <td><input type="checkbox" ng-checked="request.link_incoming == 1" ng-click="request.link_incoming=1- request.link_incoming; update_user(request)"/></td>
                     <td>
                         <a class='btn btn-default btn-select'>
                             <input type='hidden' class='btn-select-input' value='{{request.upload}}' />

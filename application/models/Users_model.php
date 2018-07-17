@@ -1,7 +1,7 @@
 <?php
 class Users_model extends CI_Model {
 
-    public $keys= array("Name", "UsrId","Pwd", "twiliophone", "backwardnumber", "twilionumbersid", "editsms", "sendsms", "upload", "role", "active", "created");
+    public $keys= array("Name", "UsrId","Pwd", "twiliophone", "backwardnumber", "twilionumbersid", "editsms", "sendsms", "upload", "role", "active", "created", "link_incoming");
 
         public function __construct()
         {
@@ -40,7 +40,7 @@ class Users_model extends CI_Model {
         }
 
         public function get_users_page($page= 0, $entry=30){
-            $querytxt = "select No, Name,UsrId, twiliophone,backwardnumber,twilionumbersid,created, editsms,sendsms, upload, role ,active   from tb_user order by role desc";
+            $querytxt = "select No, Name,UsrId, twiliophone,backwardnumber,twilionumbersid,created, editsms,sendsms, upload, role ,active ,link_incoming  from tb_user order by role desc";
             $query = $this->db->query($querytxt);    
             return $query->result_array();       
         }
