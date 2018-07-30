@@ -1,4 +1,5 @@
 <link href="/assets/styles/chat.css?10" rel="stylesheet"/>
+<link href="/assets/library/bdatepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
 <ul class="contextmenu">
  	<li><i class="fa fa-trash" aria-hidden="true"></i>Remove Message</li>
 </ul>
@@ -42,7 +43,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <a class='btn btn-default btn-select'>
+                            <a class='btn btn-default btn-select' style="margin-top:5px">
                                 <input type='hidden' class='btn-select-input' data-target='grade' value='' />
                                 <span class='btn-select-value'>Select an Item</span>
                                 <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
@@ -60,7 +61,7 @@
                     <div class="profileitem">
                         <div class="row">
                             <div class="col-sm-4 col-md-4">
-                                <label>PhoneNumber:</label>
+                                <label>PHONE NUMBER:</label>
                             </div>
                             <div class="col-sm-8 col-md-8">
                                 <span class="property_val showphone" data-target="phone"></span>
@@ -74,9 +75,6 @@
                             </div>
                             <div class="col-sm-4 col-md-4">
                                 <span class="property_val showname" id='pname' data-target="firstname,lastname"></span>
-                            </div>
-                            <div class="col-sm-4 col-md-4">
-                                <label>Owner State:</label><span class="property_val showtxt" data-target="owner_state"></span>
                             </div>
                         </div>           
                     </div>   
@@ -93,11 +91,10 @@
                     <div class="profileitem">
                         <div class="row">
                             <div class="col-sm-4 col-md-4">
-                                <label>Metro:</label>
+                                <label>Owner State:</label>
                             </div>
                             <div class="col-sm-8 col-md-8">
-                                <span class="property_val fullwidth showtxt" id='pmetro'  data-target="metro"></span>
-                                <!--input class="property_val fullwidth"  id='pcontact'  data-target="contact"/ -->
+                                <span class="property_val showtxt" data-target="owner_state"></span>
                             </div>              
                         </div>           
                     </div>
@@ -158,8 +155,8 @@
                             </div>
                         </div>           
                     </div> 
-                            
-                    <div class="discovery_form">
+                    <span class="accordion">More Detail</span>
+                    <div class="discovery_form panel">
                         <input type="hidden" id="podiopropertyitemid">
                         <input type="hidden" id="podiosellerid">
                         <input type="hidden" id="podiocashbuyerid">
@@ -167,40 +164,31 @@
                         <div class="row">
                             <div class="col-sm-5 col-md-5">
                                 <div class="row">
-                                        <span><input name="leads[bedrooms]" class="smallitem property_val zilloworigin" type="text" data-target="bed" data-zillow="bedrooms"/> <label>Bed</label></span><span><input type="text"  name="leads[bathrooms]" class="smallitem property_val zilloworigin" data-target="bath"  data-zillow="bathrooms"/> <label>Bath</label></span>                                        
+                                        <span> <label>Bed</label><input name="leads[bedrooms]" class="smallitem property_val zilloworigin" type="text" data-target="bed" data-zillow="bedrooms"/></span><span><label>Bath</label><input type="text"  name="leads[bathrooms]" class="smallitem property_val zilloworigin" data-target="bath"  data-zillow="bathrooms"/> </span>                                        
                                 </div>
                             </div>
                             <div class="col-sm-1 col-md-1"></div>
                             <div class="col-sm-6 col-md-6">
-                                <div class="row  text-right">
-                                    <label>Zillow estimate:</label>
-                                    <input type="text"   name="leads[zestimate-2]" class="mediumitem property_val zillowval_search" data-target="zillow_estimate" data-zillow="zestimate" />
+                                <div class="row">
+                                    <div class="normalwidth">
+                                        <label>Zillow estimate:</label>
+                                        <input type="text"   name="leads[zestimate-2]" class="property_val zillowval_search" data-target="zillow_estimate" data-zillow="zestimate" />
+                                    </div>
                                 </div>
                             </div>                
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 col-md-5">
-                                <div class="row text-right" >
-                                    <label>Year Built:</label> <input  name="leads[year-built]" type="text" class="mediumitem property_val zilloworigin" data-target="year_built"  data-zillow="yearBuilt"/>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="row" >
+                                    <div class="normalwidth">
+                                        <label>Year Built:</label> <input  name="leads[year-built]" type="text" class="property_val zilloworigin" data-target="year_built"  data-zillow="yearBuilt"/>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-sm-7 col-md-7">
-                                <div class="row text-right">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="row">
                                     <span><label>Owes:</label><input  name="leads[mortgage-amount-2]" type="text" class="mediumitem property_val"  data-target="owe"/> </span>
                                     <span><label>Offer:</label><input  name="leads[our-offer]" type="text" class="mediumitem property_val" data-target="offer" /> </span>                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-5 col-md-5">
-                                <div class="row text-right">
-                                    <label>Sq Ft:</label> <input  name="leads[size-of-the-house-sf]" type="text" class="mediumitem property_val  zilloworigin"  data-target="sqft" data-zillow="finishedSqFt"/>
-                                </div>
-                            </div>
-                            <div class="col-sm-7 col-md-7">
-                                <div class="row text-right">
-                                    <label>Lot size:</label>
-                                    <input type="text"  name="leads[lot-size]" class="property_val zilloworigin"   data-target="lot_size" data-zillow="lotSizeSqFt"/>
                                 </div>
                             </div>
                         </div>
@@ -208,19 +196,46 @@
                             <div class="col-sm-6 col-md-6">
                                 <div class="row">
                                     <div class="normalwidth">
-                                        <label>Central AC:</label> 
+                                        <label>Sq Ft:</label> <input  name="leads[size-of-the-house-sf]" type="text" class="property_val  zilloworigin"  data-target="sqft" data-zillow="finishedSqFt"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6">
+                                <div class="row">
+                                    <div class="normalwidth">
+                                        <label>Lot size:</label>
+                                        <input type="text"  name="leads[lot-size]" class="property_val zilloworigin"   data-target="lot_size" data-zillow="lotSizeSqFt"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="row">
+                                    <div class="normalwidth">
+                                        <label>AC:</label> 
                                         <input  name="leads[ac-notes]" type="text" class="property_val zillowval" data-target="central_ac"  data-zillow="coolingSystem"/>                        
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-6">
-                                <div class="row  text-right">
-                                    <div class="normalwidth">
-                                        <label>Asking Price:</label>
-                                        <input  name="leads[asking-price]" type="text" class="property_val" data-target="asking-price"/>
+                                <div class="row">
+                                    <div class="normalwidth">                                    
+                                        <label>Occupancy:</label> 
+                                        <a class="btn btn-default btn-select large_select property_val selectbox" data-target="occupancy">
+                                            <input  name="leads[vacant2]" type="hidden" class="btn-select-input" id="number_entries_perpage" name="" value="-1" />
+                                            <span class="btn-select-value">Select an Item</span>
+                                            <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
+                                            <ul>
+                                                <li data-value="1">Yes - Primary</li>
+                                                <li data-value="2">Yes - 2nd Home</li>
+                                                <li data-value="3" >Rented</li>
+                                                <li data-value="0" class="selected">No</li>
+                                            </ul>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
@@ -302,20 +317,10 @@
 
                         <div class="row">
                             <div class="col-sm-6 col-md-6">
-                                <div class="row">
-                                    <div class="normalwidth">                                    
-                                        <label>Occupancy:</label> 
-                                        <a class="btn btn-default btn-select large_select property_val selectbox" data-target="occupancy">
-                                            <input  name="leads[vacant2]" type="hidden" class="btn-select-input" id="number_entries_perpage" name="" value="-1" />
-                                            <span class="btn-select-value">Select an Item</span>
-                                            <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
-                                            <ul>
-                                                <li data-value="1">Yes - Primary</li>
-                                                <li data-value="2">Yes - 2nd Home</li>
-                                                <li data-value="3" >Rented</li>
-                                                <li data-value="0" class="selected">No</li>
-                                            </ul>
-                                        </a>
+                                <div class="row  text-right">
+                                    <div class="normalwidth">
+                                        <label>Asking Price:</label>
+                                        <input  name="leads[asking-price]" type="text" class="property_val" data-target="asking-price"/>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +332,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>    
+                        </div> 
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6">
+                                <div class="row">
+                                        <label>Follow up on:</label><button id="followcalendar" type="button">&#x1F4C5;</button>
+                                        <span  name="leads[followup]" type="text" class="property_val showtxt" id="followup" data-target="followup" ></span>
+                                </div>
+                            </div>         
+                        </div>   
                         <div class="row">
                             <div>
                                 <label>Other Notes:</label> 
@@ -385,8 +398,9 @@
     </div>
 </div>
 <!--<script defer src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script> -->
+<script defer type="text/javascript" src="/assets/library/bdatepicker/js/bootstrap-datepicker.min.js"></script> 
 <script defer type="text/javascript" src="/assets/js/messenger/util.js?6"></script> 
 <script defer type="text/javascript" src="/assets/js/messenger/context.js?3"></script> 
 <script defer type="text/javascript" src="/assets/js/messenger/showprofile.js?18"></script> 
-<script defer type="text/javascript" src="/assets/js/messenger/chat.js?29"></script> 
+<script defer type="text/javascript" src="/assets/js/messenger/chat.js?30"></script> 
 

@@ -1,6 +1,22 @@
 
 var trigger=false;
 $(document).ready(function(){	
+
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+	
+	for (i = 0; i < acc.length; i++) {
+	  acc[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var panel = this.nextElementSibling;
+		if (panel.style.maxHeight){
+		  panel.style.maxHeight = null;
+		} else {
+		  panel.style.maxHeight = panel.scrollHeight + "px";
+		} 
+	  });
+	}
+
 	//initFCM();
 	trigger_notification();
 
@@ -13,7 +29,28 @@ $(document).ready(function(){
 
     $(window).blur(function() {
         console.log('Window Blur');
-    });
+	});
+	
+	$('#followcalendar').datepicker({
+		todayHighlight: true
+	})
+	.on('changeDate', function(ev){
+		$('#button').datepicker('hide');
+		var current = ev.date;
+		var today = current.getFullYear() + "-"+(current.getMonth()+1)+"-"+current.getDate();
+		console.log(today);
+		var target = $("#sel_phone").val();
+		$.ajax({
+			url:"/api/api_messenger/update_member_info",
+			data:{phone:target,field:'followup', value:today},
+			type:"POST"
+		}).done(function(response, status){
+			console.log("Update Status",response.result);
+			$("#followup").text(today);
+		}).fail(function(response,status){
+
+		});		
+	});
 
 	init_chatwindow();
 	init_profilewindow();
@@ -162,8 +199,8 @@ $(document).ready(function(){
 	$(".update_from_zillow").click(function(){
 		var target = $(this).attr("data-id");
 		if(target==""){
-			$("#msgbox .modal_content").text("Please retry later .. now checking for the zillow status");
-			$("#msgbox").fadeIn();			
+			//$("#msgbox .modal_content").text("Please retry later .. now checking for the zillow status");
+			//$("#msgbox").fadeIn();			
 			return;
 		}
 		$.ajax({
@@ -659,8 +696,8 @@ function process_zillow_info(result){
 	}
 
 	if(result.message.code !='0'){
-		$("#msgbox .modal_content").text("Zillow response: "+result.message.text);
-		$("#msgbox").fadeIn();		
+		// $("#msgbox .modal_content").text("Zillow response: "+result.message.text);
+		// $("#msgbox").fadeIn();		
 		return;
 	}
 	var response = result.response;

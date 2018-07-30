@@ -114,8 +114,8 @@
 					->create(
 						array(
 							"phoneNumber" => $phone,
-							"voiceUrl" => "https://home.probateproject.com/helper/redirectphone/".$userid,
-							"smsUrl" => "https://home.probateproject.com/helper/receivesms/".$userid				
+							"voiceUrl" => "https://home.creativeinnovationlab.com/helper/redirectphone/".$userid,
+							"smsUrl" => "https://home.creativeinnovationlab.com/helper/receivesms/".$userid				
 						)
 					);
 
@@ -125,8 +125,8 @@
 				->incomingPhoneNumbers($sid)
 				->update(
 					array(
-						"voiceUrl" => "https://home.probateproject.com/helper/redirectphone/".$userid,
-						"smsUrl" => "https://home.probateproject.com/helper/receivesms/".$userid,
+						"voiceUrl" => "https://home.creativeinnovationlab.com/helper/redirectphone/".$userid,
+						"smsUrl" => "https://home.creativeinnovationlab.com/helper/receivesms/".$userid,
 						"voiceApplicationSid"=>"",
 						"smsApplicationSid"=>""
 					)

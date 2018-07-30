@@ -72,25 +72,22 @@ class Smsmsg extends CI_Controller {
                 $msg = $this->input->post('sms_msg');
                 
                 //if(substr($phonenum, 0, 1)=="+") $phonenum=substr($phonenum, 1);
-                $rep_arr=array("+","(",")","-","_"," ");
-                
-                $phonenum = str_replace($rep_arr, "", $phonenum);
 
                 $len =strlen($phonenum);
                 $data['msg']="";
                 $data['menuid']="actions";
                 $data['submenuid']=0;                  
 
-                $regex = "/[0-9]+/";
-                if ((preg_match($regex, $phonenum) && ($len>9 && $len<14)) && strlen($msg)>0) {
+
+
+                $phonenum = preg_replace("/[^0-9\+]/","", $phonenum);
                     // Indeed, the expression "[a-zA-Z]+ \d+" matches the date string
                     //echo "Found a match!";
                         $respond ="success";
-                        $phonenum = "+".$phonenum;
                         try{
                             //$sms = send_Sms($phonenum, $msg);
-                            $sms = send_Sms($phonenum, $msg);
-                            $this->smsmsg_model->insert_sms($phonenum, "+18137500671", $msg,1);                            
+                            $sms = send_Sms($phonenum, $msg, "18133285520");
+                            $this->smsmsg_model->insert_sms($phonenum, "+18133285520", $msg,1);                            
                         }catch(Exception $ex){
                             $respond="error";
                         }
@@ -101,16 +98,10 @@ class Smsmsg extends CI_Controller {
                         if($respond != "success"){
                                 $data['msg']=$respond;
                         }
-                        else
+                        else{
                                 $data['msg']="Sending sms success";
-                } else {
-                    // If preg_match() returns false, then the regex does not
-                    // match the string
-                    //echo "The regex pattern does not match. :(";
-                        $data['msg']="Phone number is worng or Message body is empty";
-                }
+                        } 
 
-                //$data['title']= sprintf("phonenum:%s \n body: %s", $phonenum, $msg);
                 $data['title']= "Send sms";
                 $data['phonenum']=$phonenum;
                 $data['menuid']="actions";

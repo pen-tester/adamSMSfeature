@@ -1,7 +1,7 @@
 <?php
 class Archive_model extends CI_Model {
     public $keys= array("date_added", "date_sent", "firstname", "lastname", "phone", "contact", "email", "leadtype", "grade", "address", "city", "state", "zip", "owner_address", "owner_city", "owner_state", "called", "propertytype", "tax_assessment", "lastsolddate", "lastsoldprice",  "bed", "bath", "zillow_estimate", "year_built", "owe", "offer", "sqft", "lot_size", "central_ac", "ac_note", "asking-price", "roof", "garage", "pool", "repairs", "occupancy", "rent", "zillow_link", "note", "rate","podioitemid", "podiosellerid", "podiocashbuyerid", "realtor", "userid","sms_sent_time","send_userid",
-    "owner_zip", "metro", "mailingaddr");
+    "owner_zip", "metro", "mailingaddr", "followup");
 
     public function __construct()
     {

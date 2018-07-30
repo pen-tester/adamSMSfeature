@@ -17,8 +17,6 @@
       <input type="hidden" value="<?php echo $submenuid;?>" id="menuid">
       <ul class="nav navbar-nav">
         <li id="messenger"><a href="/messenger/index">Messenger</a> </li>
-        <li id="chat"><a>Client with chat</a> </li>
-        <li id="status"><a href="/messenger/status">Status</a> </li>
         <li id="actions" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
